@@ -1,4 +1,6 @@
 # Fundamentos de angular
+https://fundamentos-angular-58b3e.web.app/
+Desplegado en Firebase Hosting
 
 ## Lectura de eventos
 Este repositorio incluye lectura de eventos (click, scroll, keyup [para inputs]), métodos, objetos.
