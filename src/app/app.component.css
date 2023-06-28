@@ -1,0 +1,51 @@
+.box{
+  height: 100px;
+  width: 200px;
+  overflow-y: scroll;
+  background: blueviolet;
+}
+
+.products--grid{
+  display: flex;
+  flex-direction: column;
+
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+h2, p{
+  margin: 0;
+
+}
+
+.message {
+  background-color: red;
+  color: white;
+  opacity: 0;
+
+}
+
+.message.invalid {
+  opacity: 1;
+}
+
+.styles{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+
+@media screen and (min-width: 40rem){
+  .products--grid{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 25px;
+  }
+}
+
+

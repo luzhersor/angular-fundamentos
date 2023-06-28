@@ -1,0 +1,128 @@
+
+<!---------------------NgClass & NgStyle--------------------->
+<hr>
+<h1>NgClass & NgStyle</h1>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name"/>
+
+<p class="message" [class.invalid]="nameInput2.invalid">El campo es requerido</p>
+
+
+<hr>
+<!---------------------Class & Style--------------------->
+<h1>Class & Style</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name"/>
+<p class="message" [class.invalid]="nameInput2.invalid">El campo es requerido</p>
+
+<label for="">Nombre</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name"/>
+<p [style.font-style]="nameInput3.invalid ? 'italic':'normal'">
+  Texto texto
+</p>
+<hr>
+
+<p>Cambia dinámicamente el size de la imagen</p>
+<div class="styles">
+  <div>
+    <input type="text" [(ngModel)]="widthImg"/>
+  </div>
+  <div>
+    <img  [style.width.%]="widthImg" [src]="person.avatar">
+  </div>
+</div>
+
+<!---------------------*ngSwitch--------------------->
+<hr>
+<h1>*ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name"/>
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'luz'">
+    La persona sí es luz
+  </p>
+  <p *ngSwitchCase="'maria'">
+    La persona sí es maria
+  </p>
+  <p *ngSwitchDefault="">No hace match</p>
+
+</div>
+
+<!---------------------*ngFor--------------------->
+<hr>
+<h1>*ngFor Objs</h1>
+<div class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
+  </div>
+</div>
+
+<!---------------------*ngFor--------------------->
+<hr>
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName">
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length ===0">No hay nombres</li>
+  <li *ngFor="let name of names; index as i">
+    {{i}} {{name}}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+
+<!---------------------*ngIf--------------------->
+<hr>
+<h1>*ngIf</h1>
+<input type="text" required  [(ngModel)]="person.name">
+<p *ngIf="person.name == 'luz' && person.age === 18; else elseBlock"> Soy Luz</p>
+<ng-template #elseBlock>
+  <p>Bloque de else</p>
+</ng-template>
+
+<!---------------------*ngModel--------------------->
+<hr>
+<h1>NgModel</h1>
+<p>Name {{person.name}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+<p>Valid: {{nameInput.valid}}</p>
+
+<p>Age {{person.age}}</p>
+<input type="number" max="18" min="10" #ageInput="ngModel" [(ngModel)]="person.age">
+<p>Valid: {{ageInput.valid}}</p>
+
+
+<!---------------------Eventos--------------------->
+<hr>
+<h1>Eventos</h1>
+<button [disabled]="btnDisable">Enviar</button>
+<button (click)="toggleButton()">Toggle Button</button>
+
+<p>Edad {{person.age}}</p>
+<button (click)="increaseAge()">Age ++</button>
+
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit iste cupiditate harum. Iste laboriosam, facilis rerum maxime architecto cum quibusdam quod nisi natus. Saepe, modi aut. Reiciendis, architecto magni?</p>
+</div>
+
+<p>Name {{person.name}}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)">
+
+
+
+<hr>
+<h1>Propiedad</h1>
+<button [disabled]="btnDisable">Enviar</button>
+<input type="text" [value]="person.name">
+<progress max="100" [value]="person.age"></progress>
+
+<hr>
+<h3>Hola, soy {{name}}</h3>
+<img src="{{img}}" alt="image">
+
+
+
+//Incluye lectura de eventos (click, scroll, keyup [para inputs]), métodos, objetos.
+//Paquete como "Angular Forms" para ngModel para hacer validaciones en los inputs
+
+//Estructuras de control
+//*ngIf *ngFor para arreglos de objetos
+//Uso de interfaz
