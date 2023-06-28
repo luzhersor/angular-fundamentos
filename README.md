@@ -7,9 +7,11 @@ Este repositorio incluye lectura de eventos (click, scroll, keyup [para inputs])
 Se importan paquetes como "Angular Forms" para ngModel para hacer validaciones en los inputs.
 
 ## Estructuras de control
-Se utilizan estructuras de control como *ngIf *ngFor para arreglos de objetos
+Se utilizan estructuras de control como *ngIf *ngFor para arreglos de objetos. 
+Así como la estructura *ngSwith
 
 ## Uso de interfaz
+Se hace uso de la interfaz "products" para especificar el tipo de dato de cada atributo para cada producto
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
