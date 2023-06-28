@@ -1,7 +1,12 @@
-# Store
+# Fundamentos de angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+## Lectura de eventos
+Este repositorio incluye lectura de eventos (click, scroll, keyup [para inputs]), métodos, objetos.
+Se importan paquetes como "Angular Forms" para ngModel para hacer validaciones en los inputs.
 
+//Estructuras de control
+//*ngIf *ngFor para arreglos de objetos
+//Uso de interfaz!
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
